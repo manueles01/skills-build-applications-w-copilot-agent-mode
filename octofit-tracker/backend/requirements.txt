@@ -1,5 +1,5 @@
 # Add required Python packages for the backend here, based on the MonaFit Tracker example.
 # Example packages (customize as needed):
-django
+Django==4.1
 djangorestframework
 pymongo
