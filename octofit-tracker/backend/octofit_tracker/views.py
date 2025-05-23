@@ -2,11 +2,15 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
+
 from pymongo import MongoClient
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 
-client = MongoClient(settings.MONGO_URI)
-db = client["octofit_db"]
+mongo_host = settings.DATABASES['default']['CLIENT']['host']
+mongo_port = settings.DATABASES['default']['CLIENT']['port']
+mongo_db = settings.DATABASES['default']['NAME']
+client = MongoClient(mongo_host, mongo_port)
+db = client[mongo_db]
 
 class UserList(APIView):
     def get(self, request):
