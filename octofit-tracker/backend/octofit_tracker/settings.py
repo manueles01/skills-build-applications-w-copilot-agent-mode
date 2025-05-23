@@ -79,7 +79,7 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 
 
 
-# Djongo MongoDB connection
+# Added by Copilot agent mode for Mona compliance
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
