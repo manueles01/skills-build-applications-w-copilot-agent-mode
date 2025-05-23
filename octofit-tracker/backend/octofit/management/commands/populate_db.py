@@ -7,7 +7,6 @@ from django.conf import settings
 class Command(BaseCommand):
     help = 'Populate octofit_db with test data.'
 
-
     def handle(self, *args, **kwargs):
         # Use settings from Django for Mona compliance
         db_settings = settings.DATABASES['default']
